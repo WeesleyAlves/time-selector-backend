@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
+dd($url);
+
 $host = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
@@ -13,7 +15,7 @@ $database = substr($url["path"], 1);
 
 // $host = "us-cdbr-iron-east-01.cleardb.net/";
 // $username = "b4052c9a8f347c";
-// $password = "28e278d61ecf6e0";
+// $password = "28e278d61ecf6e0 ";
 // $database ="heroku_c32cd5c7620990c";
 
 
@@ -31,7 +33,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'heroku'),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,11 +64,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'us-cdbr-iron-east-01.cleardb.net/'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'heroku_c32cd5c7620990c'),
-            'username' => env('DB_USERNAME', 'b4052c9a8f347c'),
-            'password' => env('DB_PASSWORD', '28e278d61ecf6e0'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
