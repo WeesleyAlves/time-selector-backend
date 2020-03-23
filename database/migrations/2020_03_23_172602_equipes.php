@@ -24,6 +24,7 @@ class Equipes extends Migration
             $table->string('linha2',100)->nullable($value = true);
             $table->string('linha3',100)->nullable($value = true);
             $table->string('linha4',100)->nullable($value = true);
+            $table->timestamps();
             $table->unique('id_equipe');
         });
     }
