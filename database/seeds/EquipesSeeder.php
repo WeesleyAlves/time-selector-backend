@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TimesSeeder extends Seeder
+class EquipesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,9 +11,9 @@ class TimesSeeder extends Seeder
      */
     public function run()
     {
-        $times = [
+        $equipes = [
             1 => [
-                'id'=>md5(uniqid(rand(),true)),
+                'id_equipe'=>md5(uniqid(rand(),true)),
                 'nome'=>'Time 1',
                 'local'=>'Quadra 1',
                 'horaEntrada'=>'19:00',
@@ -25,7 +25,7 @@ class TimesSeeder extends Seeder
                 'linha4'=>null
             ],
             2 => [
-                'id'=>md5(uniqid(rand(),true)),
+                'id_equipe'=>md5(uniqid(rand(),true)),
                 'nome'=>'Time 2',
                 'local'=>'Quadra 2',
                 'horaEntrada'=>'19:30',
@@ -37,7 +37,7 @@ class TimesSeeder extends Seeder
                 'linha4'=>null
             ],
             3 => [
-                'id'=>md5(uniqid(rand(),true)),
+                'id_equipe'=>md5(uniqid(rand(),true)),
                 'nome'=>'Time 3',
                 'local'=>'Quadra 3',
                 'horaEntrada'=>'20:00',
@@ -50,6 +50,6 @@ class TimesSeeder extends Seeder
             ]
         ];
 
-        DB::table('times')->insert($times);
+        DB::table('equipes')->insert($equipes);
     }
 }
