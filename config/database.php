@@ -2,19 +2,19 @@
 
 use Illuminate\Support\Str;
 
-// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-// $host = $url["host"];
-// $username = $url["user"];
-// $password = $url["pass"];
-// $database = substr($url["path"], 1);
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
 
 //b4052c9a8f347c:317b7081@us-cdbr-iron-east-01.cleardb.net/heroku_c32cd5c7620990c?reconnect=true
 
-$host = "us-cdbr-iron-east-01.cleardb.net/";
-$username = "b4052c9a8f347c";
-$password = "317b7081";
-$database ="heroku_c32cd5c7620990c";
+// $host = "us-cdbr-iron-east-01.cleardb.net/";
+// $username = "b4052c9a8f347c";
+// $password = "317b7081";
+// $database ="heroku_c32cd5c7620990c";
 
 
 
