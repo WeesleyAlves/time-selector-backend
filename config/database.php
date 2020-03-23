@@ -2,12 +2,21 @@
 
 use Illuminate\Support\Str;
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
+// $host = $url["host"];
+// $username = $url["user"];
+// $password = $url["pass"];
+// $database = substr($url["path"], 1);
+
+//b4052c9a8f347c:317b7081@us-cdbr-iron-east-01.cleardb.net/heroku_c32cd5c7620990c?reconnect=true
+
+$host = "us-cdbr-iron-east-01.cleardb.net/";
+$username = "b4052c9a8f347c";
+$password = "317b7081";
+$database ="heroku_c32cd5c7620990c";
+
+
 
 return [
 
@@ -70,6 +79,17 @@ return [
             ]) : [],
         ],
 
+        'heroku' => array(
+            'driver' => 'mysql',
+            'host' => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+        ),
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
@@ -97,18 +117,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
-        'heroku' => array(
-            'driver' => 'mysql',
-            'host' => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-        ),
-
     ],
 
     /*
